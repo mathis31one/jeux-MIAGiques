@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface BilletRepository extends JpaRepository<Billet, Long> {
     List<Billet> findByEpreuveId(Long epreuveId);
+
+    List<Billet> findBySpectateurId(Long spectateurId);
 }
