@@ -38,12 +38,5 @@ public class SpectateurController {
         List<Spectateur> spectateurs = spectateurService.recupererTousLesSpectateurs();
         return ResponseEntity.ok(spectateurs);
     }
-
-   
-
-  
-
     
-	
-	
 }
