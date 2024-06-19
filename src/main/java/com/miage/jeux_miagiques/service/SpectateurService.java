@@ -10,7 +10,6 @@ import com.miage.jeux_miagiques.dao.model.Spectateur;
 import com.miage.jeux_miagiques.dao.repository.BilletRepository;
 import com.miage.jeux_miagiques.dao.repository.SpectateurRepository;
 
-import jakarta.transaction.Transactional;
 import lombok.Data;
 
 @Service
@@ -18,6 +17,10 @@ public class SpectateurService {
 
 	@Autowired
     private SpectateurRepository spectateurRepository;
+	
+	 @Autowired
+	 private AccessTokenService accessTokenService;
+	
 
     @Autowired
     private BilletRepository billetRepository;
@@ -36,26 +39,8 @@ public class SpectateurService {
         return spectateurRepository.findAll();
     }
 
-  
+        
     
-
-    // Réservation des billets
-/*    @Transactional
-    public Billet reserverBillet(Long spectateurId, Long epreuveId, double prix) {
-        Billet billet = new Billet();
-        billet.epreuveId
-        billet.setSpectateurId(spectateurId);
-        billet.setPrix(prix);
-        billet.setEtat(Billet.EtatBillet.VALIDE);
-        return billetRepository.save(billet);
-    }*/
-
-    // Annuler une réservation
-   /* public void annulerReservation(Long billetId) {
-        Billet billet = billetRepository.findById(billetId).orElseThrow();
-        billet.setEtat(Billet.EtatBillet.ANNULE);
-        billetRepository.save(billet);
-    }*/
 
     // Consulter le programme des épreuves
     public List<Epreuve> consulterProgramme() {
