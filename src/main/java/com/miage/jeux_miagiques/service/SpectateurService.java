@@ -16,6 +16,7 @@ import lombok.Data;
 @Data
 @Service
 public class SpectateurService {
+
 	@Autowired
     private SpectateurRepository spectateurRepository;
 
