@@ -13,7 +13,6 @@ import com.miage.jeux_miagiques.dao.repository.SpectateurRepository;
 import jakarta.transaction.Transactional;
 import lombok.Data;
 
-@Data
 @Service
 public class SpectateurService {
 

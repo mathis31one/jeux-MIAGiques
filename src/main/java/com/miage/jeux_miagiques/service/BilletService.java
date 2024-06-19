@@ -7,7 +7,6 @@ import com.miage.jeux_miagiques.dao.repository.BilletRepository;
 import com.miage.jeux_miagiques.dao.repository.EpreuveRepository;
 import com.miage.jeux_miagiques.dao.repository.SpectateurRepository;
 import com.miage.jeux_miagiques.service.DTOs.BilletDTO;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 
-@Data
 @Service
 public class BilletService {
 

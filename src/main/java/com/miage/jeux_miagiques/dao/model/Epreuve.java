@@ -1,11 +1,7 @@
 package com.miage.jeux_miagiques.dao.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import lombok.Data;
 
@@ -25,10 +21,10 @@ public class Epreuve {
     @Column(name = "date")
     private LocalDate date;
 
-    @Column(name = "infrastructure_accueil")
-    private String infrastructureAccueil;
+    @ManyToOne
+    @JoinColumn(name = "infrastructure_id")
+    private InfrastructureSportive infrastructureSportive;
 
     @Column(name = "nombre_places_vente")
     private int nombrePlacesVente;
-
 }

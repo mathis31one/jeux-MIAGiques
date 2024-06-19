@@ -6,13 +6,11 @@ import com.miage.jeux_miagiques.dao.model.Participer;
 import com.miage.jeux_miagiques.dao.repository.BilletRepository;
 import com.miage.jeux_miagiques.dao.repository.EpreuveRepository;
 import com.miage.jeux_miagiques.dao.repository.ParticiperRepository;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Data
 @Service
 public class EpreuveService {
 

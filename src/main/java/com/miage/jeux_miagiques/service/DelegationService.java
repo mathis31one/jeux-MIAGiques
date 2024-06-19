@@ -2,13 +2,11 @@ package com.miage.jeux_miagiques.service;
 
 import com.miage.jeux_miagiques.dao.model.Delegation;
 import com.miage.jeux_miagiques.dao.repository.DelegationRepository;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Data
 @Service
 public class DelegationService {
 

@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Optional;
 
 
-@Data
 @Service
 public class ResultatService {
     @Autowired
