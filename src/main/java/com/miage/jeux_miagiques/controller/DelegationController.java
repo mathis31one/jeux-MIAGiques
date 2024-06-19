@@ -15,12 +15,12 @@ public class DelegationController {
     @Autowired
     private DelegationService delegationService;
 
-  /*  // Création d'une délégation'
+   // Création d'une délégation'
     @PostMapping("/creation")
     public ResponseEntity<Delegation> creerDelegation(@RequestParam String nom) {
         Delegation nouvelleDelegation = delegationService.inscrireDelegation(nom);
         return ResponseEntity.ok(nouvelleDelegation);
-    }*/
+    }
 
     // Suppression d'une délégation
     @DeleteMapping("/suppression/{delegationId}")

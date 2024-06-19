@@ -13,7 +13,7 @@ public class DelegationService {
     @Autowired
     private DelegationRepository delegationRepository;
 
-/*
+
     public Delegation inscrireDelegation(String nomDelegation) {
         Delegation delegation= new Delegation();
         delegation.setNom(nomDelegation);
@@ -21,7 +21,7 @@ public class DelegationService {
         delegation.setNombreMedaillesBronze(0);
         delegation.setNombreMedaillesOr(0);
         return delegationRepository.save(delegation);
-    }*/
+    }
 
     public void supprimerDelegation(Long delegationId) {
         delegationRepository.deleteById(delegationId);
