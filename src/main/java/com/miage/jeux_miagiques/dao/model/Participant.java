@@ -30,7 +30,7 @@ public class Participant {
     @Column(name = "adresse_email", unique = true)
     private String adresseEmail;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "delegation_id")
     private Delegation delegation;
 
