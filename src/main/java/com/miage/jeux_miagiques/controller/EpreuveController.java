@@ -1,6 +1,7 @@
 package com.miage.jeux_miagiques.controller;
 
 import com.miage.jeux_miagiques.dao.model.Epreuve;
+import com.miage.jeux_miagiques.service.DTOs.EpreuveDTO;
 import com.miage.jeux_miagiques.service.EpreuveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,8 @@ public class EpreuveController {
 
     // Inscription d'une nouvelle epreuve
     @PostMapping("/creation")
-    public ResponseEntity<Epreuve> creationEpreuve(@RequestBody Epreuve epreuve) {
-        Epreuve nouvelleEpreuve = epreuveService.creerEpreuve(epreuve);
+    public ResponseEntity<Epreuve> creationEpreuve(@RequestBody EpreuveDTO epreuveDTO) {
+        Epreuve nouvelleEpreuve = epreuveService.creerEpreuve(epreuveDTO);
         return ResponseEntity.ok(nouvelleEpreuve);
     }
 
@@ -34,5 +35,11 @@ public class EpreuveController {
     public ResponseEntity<List<Epreuve>> recupererTousLesSpectateurs() {
         List<Epreuve> spectateurs = epreuveService.recupererToutesLesEpreuves();
         return ResponseEntity.ok(spectateurs);
+    }
+
+    @PutMapping("/capacite/{epreuveId}")
+    public ResponseEntity<?> updatePlaces(@PathVariable Long epreuveId, @RequestParam int nbPlaces){
+        Epreuve epreuve = epreuveService.definirPlaces(epreuveId,nbPlaces);
+        return ResponseEntity.ok(epreuve);
     }
 }
