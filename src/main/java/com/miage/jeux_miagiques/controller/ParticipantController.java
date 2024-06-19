@@ -1,6 +1,7 @@
 package com.miage.jeux_miagiques.controller;
 
 import com.miage.jeux_miagiques.dao.model.Spectateur;
+import com.miage.jeux_miagiques.service.DTOs.ParticipantDTO;
 import com.miage.jeux_miagiques.service.SpectateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class ParticipantController {
 
     // Création de compte participant
     @PostMapping("/inscription")
-    public ResponseEntity<Participant> inscrireSpectateur(@RequestBody Participant participant) {
+    public ResponseEntity<Participant> inscrireParticipant(@RequestBody ParticipantDTO participant) {
         Participant nouveauParticipant = participantService.inscrireParticipant(participant);
         return ResponseEntity.ok(nouveauParticipant);
     }

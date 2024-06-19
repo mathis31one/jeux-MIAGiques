@@ -31,5 +31,4 @@ public class Epreuve {
     @Column(name = "nombre_places_vente")
     private int nombrePlacesVente;
 
-    
 }
