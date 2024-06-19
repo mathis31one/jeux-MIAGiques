@@ -27,14 +27,14 @@ public class ParticiperController {
     }
 
     // Suppression d'une participation
-    @DeleteMapping("/suppression/{epreuveId}")
-    public ResponseEntity<?> supprimerSpectateur(@PathVariable Long partciperId) {
+    @DeleteMapping("/desengager/{epreuveId}")
+    public ResponseEntity<?> desengagerParticipation(@PathVariable Long partciperId) {
         participerService.supprimerParticipation(partciperId);
         return ResponseEntity.ok("participation supprimée avec succès");
     }
 
     @GetMapping("/epreuves")
-    public ResponseEntity<List<Participer>> recupererTousLesSpectateurs() {
+    public ResponseEntity<List<Participer>> recupererToutesLesParticipations() {
         List<Participer> participations = participerService.recupererToutesLesParticipations();
         return ResponseEntity.ok(participations);
     }

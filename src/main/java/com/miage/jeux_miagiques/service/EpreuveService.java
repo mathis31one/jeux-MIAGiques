@@ -64,7 +64,7 @@ public class EpreuveService {
         }else{
             epreuve.setNombrePlacesVente(places);
         }
-        return epreuve;
+        return epreuveRepository.save(epreuve);
     }
 
     public List<Epreuve> recupererToutesLesEpreuves() {

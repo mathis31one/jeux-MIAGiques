@@ -26,13 +26,13 @@ public class EpreuveController {
 
     // Suppression d'une épreuve
     @DeleteMapping("/suppression/{epreuveId}")
-    public ResponseEntity<?> supprimerSpectateur(@PathVariable Long epreuveId) {
+    public ResponseEntity<?> supprimerEpreuve(@PathVariable Long epreuveId) {
         epreuveService.supprimerEpreuve(epreuveId);
-        return ResponseEntity.ok("Compte de spectateur supprimé avec succès");
+        return ResponseEntity.ok("Epreuve supprimée avec succès");
     }
 
     @GetMapping("/epreuves")
-    public ResponseEntity<List<Epreuve>> recupererTousLesSpectateurs() {
+    public ResponseEntity<List<Epreuve>> recupererToutesLesEpreuves() {
         List<Epreuve> spectateurs = epreuveService.recupererToutesLesEpreuves();
         return ResponseEntity.ok(spectateurs);
     }

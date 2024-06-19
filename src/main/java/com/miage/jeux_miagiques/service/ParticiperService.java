@@ -11,6 +11,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -39,14 +40,22 @@ public class ParticiperService {
             }
         }
 
-
+        participer.setStatus("Actif");
         participer.setParticipant(participant);
         participer.setEpreuve(epreuve);
         return participerRepository.save(participer);
     }
 
     public void supprimerParticipation(Long participerId) {
-        participerRepository.deleteById(participerId);
+        Participer participer = participerRepository.findById(participerId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid participer ID"));
+        LocalDate today = LocalDate.now();
+        if (participer.getEpreuve().getDate().isBefore(today.plusDays(10))) {
+            participer.setStatus("Forfait");
+            participerRepository.save(participer);
+        }else {
+            participerRepository.deleteById(participerId);
+        }
     }
 
     public List<Participer> recupererToutesLesParticipations() {

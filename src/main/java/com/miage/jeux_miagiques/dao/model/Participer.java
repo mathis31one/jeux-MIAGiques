@@ -20,4 +20,7 @@ public class Participer {
     @ManyToOne
     @JoinColumn(name = "participant_id", nullable = false)
     private Participant participant;
+
+    @Column(name = "status")
+    private String status;
 }
