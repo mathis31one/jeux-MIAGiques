@@ -27,4 +27,7 @@ public class Epreuve {
 
     @Column(name = "nombre_places_vente")
     private int nombrePlacesVente;
+
+    @Column(name = "nombre_participants_maximum")
+    private int nombreParticipantsMaximum;
 }

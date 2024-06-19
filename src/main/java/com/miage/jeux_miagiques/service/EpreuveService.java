@@ -67,6 +67,13 @@ public class EpreuveService {
         return epreuveRepository.save(epreuve);
     }
 
+    public Epreuve definirParticipantsMax(long epreuveId, int nombreMax) {
+        Epreuve epreuve = epreuveRepository.findById(epreuveId)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid epreuve ID"));
+        epreuve.setNombreParticipantsMaximum(nombreMax);
+        return epreuveRepository.save(epreuve);
+    }
+
     public List<Epreuve> recupererToutesLesEpreuves() {
         return epreuveRepository.findAll();
     }

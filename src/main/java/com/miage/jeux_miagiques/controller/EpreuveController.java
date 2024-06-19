@@ -42,4 +42,10 @@ public class EpreuveController {
         Epreuve epreuve = epreuveService.definirPlaces(epreuveId,nbPlaces);
         return ResponseEntity.ok(epreuve);
     }
+
+    @PutMapping("/participantsMax/{epreuveId}")
+    public ResponseEntity<?> updateParticipantsMax(@PathVariable Long epreuveId, @RequestParam int participantsMax){
+        Epreuve epreuve = epreuveService.definirParticipantsMax(epreuveId,participantsMax);
+        return ResponseEntity.ok(epreuve);
+    }
 }

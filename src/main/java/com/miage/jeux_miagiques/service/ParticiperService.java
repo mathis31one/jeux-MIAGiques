@@ -33,7 +33,15 @@ public class ParticiperService {
         Epreuve epreuve = epreuveRepository.findById(participerDTO.getEpreuveID())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid epreuve ID"));
 
+
         List<Participer> participations = participerRepository.findByEpreuveId(participerDTO.getEpreuveID());
+
+        int participantsMaxEpreuve = participer.getEpreuve().getNombreParticipantsMaximum();
+        int participantsEpreuve = participations.size();
+        if(participantsEpreuve >= participantsMaxEpreuve){
+            throw new IllegalStateException("l'épreuve est déjà à son nombre maximum de participants");
+        }
+        
         for(Participer participation : participations) {
             if(participation.getParticipant().getDelegation() == participant.getDelegation()){
                 throw new IllegalStateException("Un participant de cette délégation est déjà inscrit");
