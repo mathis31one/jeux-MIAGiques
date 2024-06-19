@@ -17,7 +17,7 @@ public class Spectateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_spectateur")
-    private Long idSpectateur;
+    private Long id;
 
     @Column(name = "nom")
     private String nom;

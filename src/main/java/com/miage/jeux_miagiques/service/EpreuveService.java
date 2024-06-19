@@ -34,7 +34,7 @@ public class EpreuveService {
         }
 
         //suprression des billets de cette epreuve
-        List<Billet> billets = billetRepository.findByEpreuveId(epreuveId);
+        List<Billet> billets = billetRepository.findBilletByEpreuve_Id(epreuveId);
         for (Billet billet : billets) {
             billetRepository.delete(billet);
         }

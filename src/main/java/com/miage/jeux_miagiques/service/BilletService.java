@@ -74,11 +74,11 @@ public class BilletService {
     }
 
     public List<Billet> recupererTousLesBilletParSpectateur(Long spectateurId){
-        return billetRepository.findBySpectateurId(spectateurId);
+        return billetRepository.findBilletBySpectateur_Id(spectateurId);
     }
 
     public List<Billet> recupererTousLesBilletParEpreuve(Long spectateurId){
-        return billetRepository.findByEpreuveId(spectateurId);
+        return billetRepository.findBilletByEpreuve_Id(spectateurId);
     }
 
     public List<Billet> recupererTousLesBille(){

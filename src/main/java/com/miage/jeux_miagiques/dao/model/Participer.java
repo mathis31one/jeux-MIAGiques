@@ -11,7 +11,7 @@ public class Participer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_participation")
-    private Long idParticipation;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "epreuve_id", nullable = false)

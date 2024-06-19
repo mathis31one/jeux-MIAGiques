@@ -8,7 +8,7 @@ import com.miage.jeux_miagiques.dao.model.Billet;
 import java.util.List;
 
 public interface BilletRepository extends JpaRepository<Billet, Long> {
-    List<Billet> findByEpreuveId(Long epreuveId);
+    List<Billet> findBilletByEpreuve_Id(Long epreuveId);
 
-    List<Billet> findBySpectateurId(Long spectateurId);
+    List<Billet> findBilletBySpectateur_Id(Long spectateurId);
 }
