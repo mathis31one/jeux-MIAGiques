@@ -1,7 +1,11 @@
 package com.miage.jeux_miagiques.dao.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
+@Entity
+@Table(name = "participer")
 public class Participer {
 
     @Id
