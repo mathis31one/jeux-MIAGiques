@@ -1,6 +1,7 @@
 package com.miage.jeux_miagiques.controller;
 
 import com.miage.jeux_miagiques.dao.model.Resultat;
+import com.miage.jeux_miagiques.service.DTOs.ResultatDTO;
 import com.miage.jeux_miagiques.service.ResultatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,21 +30,9 @@ public class ResultatController {
     }
 
     @PostMapping
-    public ResponseEntity<Resultat> createResultat(@RequestBody Resultat resultat) {
-        Resultat createdResultat = resultatService.createOrUpdateResultat(resultat);
+    public ResponseEntity<Resultat> createResultat(@RequestBody ResultatDTO resultatDTO) {
+        Resultat createdResultat = resultatService.createResultat(resultatDTO);
         return ResponseEntity.ok(createdResultat);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Resultat> updateResultat(@PathVariable Long id, @RequestBody Resultat updatedResultat) {
-        Optional<Resultat> existingResultat = resultatService.getResultatById(id);
-        if (existingResultat.isPresent()) {
-            updatedResultat.setId(id);
-            Resultat savedResultat = resultatService.createOrUpdateResultat(updatedResultat);
-            return ResponseEntity.ok(savedResultat);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
     }
 
     @DeleteMapping("/{id}")

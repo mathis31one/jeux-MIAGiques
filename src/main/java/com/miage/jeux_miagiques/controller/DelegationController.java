@@ -15,12 +15,12 @@ public class DelegationController {
     @Autowired
     private DelegationService delegationService;
 
-  /*  // Création d'une délégation'
+    // Création d'une délégation'
     @PostMapping("/creation")
     public ResponseEntity<Delegation> creerDelegation(@RequestParam String nom) {
         Delegation nouvelleDelegation = delegationService.inscrireDelegation(nom);
         return ResponseEntity.ok(nouvelleDelegation);
-    }*/
+    }
 
     // Suppression d'une délégation
     @DeleteMapping("/suppression/{delegationId}")
@@ -33,6 +33,12 @@ public class DelegationController {
     @GetMapping("/delegations")
     public ResponseEntity<List<Delegation>> recupererToutesLesDelegations() {
         List<Delegation> delegations = delegationService.recupererToutesLesDelegations();
+        return ResponseEntity.ok(delegations);
+    }
+
+    @GetMapping("/classement")
+    public ResponseEntity<List<Delegation>> recupererClassementGeneral(){
+        List<Delegation> delegations = delegationService.recupererClassementGeneral();
         return ResponseEntity.ok(delegations);
     }
 }
