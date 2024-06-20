@@ -28,7 +28,7 @@ public class BilletService {
         Spectateur spectateur = spectateurRepository.findById(billetDTO.getSpectateurId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid spectateur ID"));
         Epreuve epreuve = epreuveRepository.findById(billetDTO.getEpreuveId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid spectateur ID"));
+                .orElseThrow(() -> new IllegalArgumentException("Invalid epreuve ID"));
 
 
         Billet billet = new Billet();
