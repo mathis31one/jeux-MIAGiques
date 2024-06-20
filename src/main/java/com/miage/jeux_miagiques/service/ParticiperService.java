@@ -36,7 +36,7 @@ public class ParticiperService {
 
         List<Participer> participations = participerRepository.findByEpreuveId(participerDTO.getEpreuveID());
 
-        int participantsMaxEpreuve = participer.getEpreuve().getNombreParticipantsMaximum();
+        int participantsMaxEpreuve = epreuve.getNombreParticipantsMaximum();
         int participantsEpreuve = participations.size();
         if(participantsEpreuve >= participantsMaxEpreuve){
             throw new IllegalStateException("l'épreuve est déjà à son nombre maximum de participants");
