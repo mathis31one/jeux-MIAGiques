@@ -17,13 +17,7 @@ public class SpectateurService {
 
 	@Autowired
     private SpectateurRepository spectateurRepository;
-	
-	 @Autowired
-	 private AccessTokenService accessTokenService;
-	
 
-    @Autowired
-    private BilletRepository billetRepository;
 
     // Inscription d'un nouveau spectateur
     public Spectateur inscrireSpectateur(Spectateur spectateur) {
